@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 const CartPage = ({ cart, setCart }) => {
   const [discount, setDiscount] = useState(0);
@@ -114,13 +115,15 @@ const CartPage = ({ cart, setCart }) => {
               </div>
               <p className='text-sm'>apply discount coupons</p>
             </div>
-
+            <Link href="/login">
             <button
-              onClick={handleCheckout}
+              // onClick={handleCheckout}
               className="bg-green-500 text-white px-4 py-2 rounded mt-4 hover:bg-green-600"
             >
               Proceed to Checkout
             </button>
+            </Link>
+            
           </div>
         </div>
       )}
@@ -129,5 +132,4 @@ const CartPage = ({ cart, setCart }) => {
 };
 
 export default CartPage;
-
 
