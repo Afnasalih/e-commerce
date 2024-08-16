@@ -32,8 +32,9 @@ const CartPage = ({ cart, setCart }) => {
   const handleCheckout = () => {
     const user = localStorage.getItem('user');
     if (user) {
+      router.push('/checkout');
+    } else{
       router.push('/login');
-    } 
   };
 
   return (
@@ -115,14 +116,14 @@ const CartPage = ({ cart, setCart }) => {
               </div>
               <p className='text-sm'>apply discount coupons</p>
             </div>
-            <Link href="/checkout">
+            // <Link href="/checkout">
             <button
-              // onClick={handleCheckout}
+              onClick={handleCheckout}
               className="bg-green-500 text-white px-4 py-2 rounded mt-4 hover:bg-green-600"
             >
               Proceed to Checkout
             </button>
-            </Link>
+            // </Link>
             
           </div>
         </div>
